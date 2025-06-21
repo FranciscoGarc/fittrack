@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHUL Workout Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white antialiased flex flex-col min-h-screen">
+
+<!-- Header -->
+<header class="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-20 shadow-lg">
+    <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+            <div class="flex-1">
+                <h1 class="text-xl sm:text-2xl font-bold text-emerald-400">Workout Tracker</h1>
+            </div>
+            <div class="text-center">
+                <div class="text-sm text-gray-400">Descanso</div>
+                <div id="timer" class="text-4xl font-bold timer-display text-white">2:00</div>
+            </div>
+            <div class="flex-1"></div>
+        </div>
+    </div>
+</header>
+
+<!-- Navigation -->
+<nav class="bg-gray-800 border-t border-b border-gray-700">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <button id="prevDayBtn" class="p-2 rounded-full bg-gray-700 hover:bg-emerald-500 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <h2 id="routineTitle" class="text-lg sm:text-xl font-bold text-center text-emerald-400"></h2>
+        <button id="nextDayBtn" class="p-2 rounded-full bg-gray-700 hover:bg-emerald-500 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main id="app" class="container mx-auto p-4 flex-grow">
+    <!-- Routine will be rendered here by JavaScript -->
+</main>
+
+<!-- Congratulations Modal -->
+<div id="congratsModal" class="congrats-modal hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-30 p-4">
+    <div class="bg-gray-800 rounded-2xl shadow-2xl p-8 text-center max-w-sm w-full border border-emerald-500/30">
+        <div class="text-6xl mb-4">🎉</div>
+        <h2 id="modalTitle" class="text-3xl font-bold text-emerald-400 mb-2">¡Felicidades!</h2>
+        <p id="modalMessage" class="text-gray-300 mb-6">Has completado la rutina de hoy. ¡Excelente trabajo!</p>
+        <button id="closeModalBtn" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75">Cerrar</button>
+    </div>
+</div>
+</body>
+<script src="script.js"></script>
+</html>
