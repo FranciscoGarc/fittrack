@@ -38,15 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            day: "Día 3: Calistenia y Core",
-            exercises: [
-                { name: "Flexiones", sets: 4, reps: 8, completed: [false, false, false, false] },
-                { name: "Fondos en Paralelas", sets: 4, reps: 10, completed: [false, false, false, false] },
-                { name: "Flexiones Pliométricas", sets: 3, reps: 8, completed: [false, false, false] },
-                { name: "Burpews", sets: 3, reps: "10-15", completed: [false, false, false] },
-                { name: "Pistol Squats (asistidas)", sets: 3, reps: 5, completed: [false, false, false] },
-                { name: "Plancha", sets: 3, reps: "60s", completed: [false, false, false] },
-            ]
+            day: "Día 3: Descanso",
+            exercises: []
         },
         {
             day: "Día 4: Parte Superior - Hipertrofia",
