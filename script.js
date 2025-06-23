@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const routineTitle = document.getElementById('routineTitle');
     const prevDayBtn = document.getElementById('prevDayBtn');
     const nextDayBtn = document.getElementById('nextDayBtn');
+    const resetDayBtn = document.getElementById('resetDayBtn');
     const congratsModal = document.getElementById('congratsModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const modalTitle = document.getElementById('modalTitle');
@@ -14,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentDayIndex = 0;
 
     // --- Workout Data Structure with State ---
-    let workoutState = [
+    let workoutState = [];
+    const defaultWorkoutState = [
         {
             day: "Día 1: Parte Superior - Fuerza",
             exercises: [
@@ -70,6 +72,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    // --- State Management ---
+    const saveState = () => {
+        localStorage.setItem('fittrack_progress', JSON.stringify(workoutState));
+    };
+
+    const loadState = () => {
+        const savedState = localStorage.getItem('fittrack_progress');
+        if (savedState) {
+            workoutState = JSON.parse(savedState);
+        } else {
+            workoutState = defaultWorkoutState;
+        }
+        const savedDay = localStorage.getItem('fittrack_currentDay');
+        currentDayIndex = savedDay ? parseInt(savedDay) : 0;
+    };
+
     // --- Timer Functions ---
     const startTimer = () => {
         clearInterval(timerInterval);
@@ -97,31 +115,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderCurrentDay = () => {
         const routine = workoutState[currentDayIndex];
         routineTitle.textContent = routine.day;
-        let html = '<div class="space-y-6">';
+        resetDayBtn.style.display = routine.exercises.length > 0 ? 'block' : 'none';
 
+        let html = '<div class="space-y-6">';
         if (routine.exercises.length === 0) {
             html += `<div class="text-center p-8 bg-gray-800 rounded-xl shadow-lg">
-                                <p class="text-2xl mb-4">🧘‍♂️</p>
-                                <p class="text-gray-300 text-lg">Descansa y recupérate. ¡Te lo has ganado!</p>
-                             </div>`;
+                        <p class="text-2xl mb-4">🧘‍♂️</p>
+                        <p class="text-gray-300 text-lg">Descansa y recupérate. ¡Te lo has ganado!</p>
+                     </div>`;
         } else {
             routine.exercises.forEach((exercise, exerciseIndex) => {
                 html += `
-                            <div id="exercise-${exerciseIndex}" class="p-4 bg-gray-800 rounded-xl shadow-lg border border-gray-700">
-                                <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4 gap-2">
-                                    <h3 class="text-lg font-semibold text-white">${exercise.name}</h3>
-                                    <p class="text-sm font-medium text-gray-300 bg-gray-700 px-3 py-1 rounded-full self-start sm:self-center">${exercise.sets} series de ${exercise.reps} repeticiones</p>
-                                </div>
-                                <div class="flex flex-wrap gap-4 justify-start sm:justify-center">
-                        `;
+                    <div id="exercise-${exerciseIndex}" class="p-4 bg-gray-800 rounded-xl shadow-lg border border-gray-700">
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4 gap-2">
+                            <h3 class="text-lg font-semibold text-white">${exercise.name}</h3>
+                            <p class="text-sm font-medium text-gray-300 bg-gray-700 px-3 py-1 rounded-full self-start sm:self-center">${exercise.sets} series de ${exercise.reps} repeticiones</p>
+                        </div>
+                        <div class="flex flex-wrap gap-4 justify-start sm:justify-center">
+                `;
                 for (let i = 0; i < exercise.sets; i++) {
                     const isChecked = exercise.completed[i];
                     html += `
-                                <div class="flex items-center space-x-2">
-                                    <input type="checkbox" id="set-${exerciseIndex}-${i}" class="custom-checkbox" data-exercise="${exerciseIndex}" data-set="${i}" ${isChecked ? 'checked' : ''}>
-                                    <label for="set-${exerciseIndex}-${i}" class="text-gray-300">Serie ${i + 1}</label>
-                                </div>
-                            `;
+                        <div class="flex items-center space-x-2">
+                            <input type="checkbox" id="set-${exerciseIndex}-${i}" class="custom-checkbox" data-exercise="${exerciseIndex}" data-set="${i}" ${isChecked ? 'checked' : ''}>
+                            <label for="set-${exerciseIndex}-${i}" class="text-gray-300">Serie ${i + 1}</label>
+                        </div>
+                    `;
                 }
                 html += `</div></div>`;
             });
@@ -139,9 +158,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const setIndex = e.target.dataset.set;
             workoutState[currentDayIndex].exercises[exerciseIndex].completed[setIndex] = true;
 
+            saveState();
             startTimer();
             updateCheckboxStates();
             checkRoutineCompletion();
+        }
+    };
+
+    const resetCurrentDay = () => {
+        if (confirm('¿Estás seguro de que quieres reiniciar el progreso de hoy?')) {
+            const routine = workoutState[currentDayIndex];
+            routine.exercises.forEach(ex => {
+                ex.completed = ex.completed.map(() => false);
+            });
+            saveState();
+            renderCurrentDay();
         }
     };
 
@@ -161,12 +192,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 let isPrevSetDone = false;
-                if (setIndex > 0) { // Check previous set in same exercise
+                if (setIndex > 0) {
                     isPrevSetDone = exercise.completed[setIndex - 1];
-                } else if (exIndex > 0) { // Check last set of previous exercise
+                } else if (exIndex > 0) {
                     const prevExercise = routine.exercises[exIndex - 1];
                     isPrevSetDone = prevExercise.completed[prevExercise.sets - 1];
-                } else { // First set of first exercise
+                } else {
                     isPrevSetDone = true;
                 }
                 cb.disabled = !isPrevSetDone;
@@ -189,8 +220,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const navigateDays = (direction) => {
         currentDayIndex = (currentDayIndex + direction + workoutState.length) % workoutState.length;
+        localStorage.setItem('fittrack_currentDay', currentDayIndex);
         renderCurrentDay();
-    }
+    };
 
     const addEventListenersToCbs = () => {
         const checkboxes = document.querySelectorAll('.custom-checkbox');
@@ -199,12 +231,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // --- PWA Service Worker ---
+    const registerServiceWorker = () => {
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/fittrack/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    };
+
     // --- Global Event Listeners & Initializer ---
     prevDayBtn.addEventListener('click', () => navigateDays(-1));
     nextDayBtn.addEventListener('click', () => navigateDays(1));
+    resetDayBtn.addEventListener('click', resetCurrentDay);
     closeModalBtn.addEventListener('click', () => {
         congratsModal.classList.add('hidden');
     });
 
+    loadState();
     renderCurrentDay();
+    registerServiceWorker();
 });
