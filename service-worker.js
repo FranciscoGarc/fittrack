@@ -1,15 +1,15 @@
-const CACHE_NAME = 'fittrack-v1';
+const CACHE_NAME = 'fittrack-v2'; // Cambiamos la versión para forzar la actualización
 const urlsToCache = [
-    '/fittrack/',
-    '/fittrack/index.html',
-    '/fittrack/styles.css',
-    '/fittrack/script.js',
-    'https://cdn.tailwindcss.com',
-    'https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js',
-    'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap'
+    './', // El punto representa el directorio raíz (index.html)
+    'index.html',
+    'styles.css',
+    'script.js',
+    'manifest.json',
+    'images/icons/icon-128x128.png',
+    'images/icons/icon-512x512.png'
 ];
 
-// Instalar el Service Worker y cachear los archivos de la app
+// Instalar el Service Worker
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
@@ -20,15 +20,32 @@ self.addEventListener('install', event => {
     );
 });
 
+// Activar el Service Worker y limpiar cachés antiguas
+self.addEventListener('activate', event => {
+    const cacheWhitelist = [CACHE_NAME];
+    event.waitUntil(
+        caches.keys().then(cacheNames => {
+            return Promise.all(
+                cacheNames.map(cacheName => {
+                    if (cacheWhitelist.indexOf(cacheName) === -1) {
+                        return caches.delete(cacheName);
+                    }
+                })
+            );
+        })
+    );
+});
+
 // Interceptar las peticiones y servirlas desde la caché si es posible
 self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request)
             .then(response => {
-                    // Cache hit - return response
+                    // Si encontramos el recurso en la caché, lo devolvemos
                     if (response) {
                         return response;
                     }
+                    // Si no, intentamos obtenerlo de la red
                     return fetch(event.request);
                 }
             )

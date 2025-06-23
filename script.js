@@ -235,7 +235,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerServiceWorker = () => {
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/fittrack/service-worker.js')
+                // Cambiamos la ruta para que funcione localmente y en GitHub
+                navigator.serviceWorker.register('service-worker.js')
                     .then(registration => {
                         console.log('ServiceWorker registration successful with scope: ', registration.scope);
                     })
