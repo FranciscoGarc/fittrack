@@ -1,65 +1,132 @@
-# FitTrack - Rastreador de Ejercicios
+# FitTrack - Rastreador de Rutinas de Ejercicio
 
-FitTrack es una aplicación web progresiva (PWA) simple diseñada para ayudarte a seguir tu progreso en la rutina de ejercicios PHUL (Power Hypertrophy Upper Lower). Está construida con HTML, CSS vainilla y JavaScript, y utiliza Tailwind CSS para los estilos.
+## Descripción General
 
-## Características
+FitTrack es una aplicación web progresiva (PWA) diseñada para ayudarte a seguir y gestionar tus rutinas de ejercicio de manera eficiente. La aplicación ofrece dos tipos de rutinas populares: Torso-Pierna y PPL (Push-Pull-Legs), permitiéndote personalizar tu entrenamiento según tus objetivos y preferencias.
 
-*   **Seguimiento de Rutina PHUL:** Sigue fácilmente los días de entrenamiento de Fuerza Superior, Fuerza Inferior, Hipertrofia Superior e Hipertrofia Inferior.
-*   **Temporizador de Descanso:** Un temporizador de descanso integrado de 2 minutos se activa después de completar cada serie.
-*   **Persistencia de Datos:** Tu progreso se guarda en el almacenamiento local de tu navegador, para que puedas continuar donde lo dejaste.
-*   **Funcionalidad PWA:** Instala la aplicación en tu dispositivo para acceder sin conexión.
-*   **Diseño Responsivo:** Interfaz fácil de usar en dispositivos de escritorio y móviles.
-*   **Notificaciones Sonoras:** Recibe una alerta sonora cuando tu temporizador de descanso termine.
+## Características Principales
+
+### 🏋️‍♂️ Rutinas de Entrenamiento
+- **Torso-Pierna**: Rutina dividida en días alternos para torso y piernas
+- **PPL (Push-Pull-Legs)**: Rutina dividida en tres días: empuje, tracción y piernas
+- **Cambio dinámico**: Puedes cambiar entre rutinas con un simple interruptor
+
+### ⏱️ Temporizador Integrado
+- Temporizador de descanso configurable
+- Visualización clara del tiempo restante
+- Indicador visual del estado actual (descanso/entrenamiento)
+
+### 📱 Interfaz de Usuario
+- Diseño responsive que se adapta a móviles y tablets
+- Interfaz oscura moderna con esquema de colores verde esmeralda
+- Animaciones suaves y transiciones fluidas
+- Iconos intuitivos para navegación fácil
+
+### 🎯 Gestión de Progreso
+- Marcado de ejercicios completados
+- Reinicio diario de rutinas
+- Indicadores visuales de progreso
+- Mensajes de felicitación al completar rutinas
 
 ## Estructura del Proyecto
 
-*   `index.html`: La estructura principal de la aplicación.
-*   `styles.css`: Estilos personalizados adicionales a Tailwind CSS.
-*   `script.js`: Contiene toda la lógica de JavaScript para la aplicación, incluyendo:
-    *   Manejo del estado del entrenamiento.
-    *   Funciones del temporizador.
-    *   Renderizado de la interfaz de usuario.
-    *   Manejo de eventos.
-    *   Registro del Service Worker.
-*   `manifest.json`: Define los metadatos de la PWA.
-*   `service-worker.js`: Gestiona la funcionalidad sin conexión y el almacenamiento en caché.
-*   `images/`: Contiene los iconos de la aplicación.
+```
+fittrack/
+├── index.html          # Página principal de la aplicación
+├── script.js           # Lógica de la aplicación y funcionalidad
+├── styles.css          # Estilos personalizados y animaciones
+├── images/
+│   └── icons/          # Iconos para PWA
+│       ├── icon-128x128.png
+│       └── icon-512x512.png
+└── README.md          # Este archivo
+```
 
-## Cómo Empezar
+## Tecnologías Utilizadas
 
-1.  **Clona el repositorio (opcional):**
-    Si quieres ejecutar esto localmente o modificarlo:
-    ```bash
-    git clone https://github.com/tu-usuario/fittrack.git
-    cd fittrack
-    ```
-    (Reemplaza `https://github.com/tu-usuario/fittrack.git` con la URL real del repositorio si está disponible)
+- **HTML5**: Estructura semántica y accesibilidad
+- **CSS3**: Estilos modernos con animaciones y diseño responsive
+- **JavaScript ES6+**: Funcionalidad interactiva y lógica de la aplicación
+- **Tailwind CSS**: Framework de utilidades CSS para estilos rápidos
+- **Inter Font**: Tipografía moderna y legible
 
-2.  **Abre `index.html` en tu navegador:**
-    Simplemente abre el archivo `index.html` en tu navegador web preferido.
+## Instalación y Uso
 
-3.  **Instala la PWA (Opcional):**
-    Busca el botón "Instalar" o "Añadir a la pantalla de inicio" en la barra de direcciones de tu navegador para usar FitTrack como una aplicación independiente.
+### Opción 1: Uso Directo
+1. Abre el archivo `index.html` en tu navegador web preferido
+2. La aplicación funcionará inmediatamente sin necesidad de instalación
 
-## Uso
+### Opción 2: Instalación como PWA
+1. Abre la aplicación en tu navegador móvil
+2. Busca la opción "Agregar a pantalla de inicio" o "Instalar aplicación"
+3. Sigue las instrucciones del navegador para completar la instalación
 
-*   **Navegación:** Usa los botones de flecha para moverte entre los días de entrenamiento.
-*   **Marcar Series:** Marca las casillas de verificación a medida que completas cada serie. La siguiente serie disponible se desbloqueará.
-*   **Temporizador de Descanso:** El temporizador de descanso de 2 minutos comenzará automáticamente después de marcar una serie.
-*   **Reiniciar Día:** Haz clic en el icono de reinicio junto al título del día para borrar el progreso del día actual.
-*   **Modal de Felicitación:** Aparecerá un mensaje de felicitación cuando completes todos los ejercicios de un día.
+## Cómo Usar la Aplicación
 
-## Contribuir
+### Selección de Rutina
+1. Usa el interruptor en la parte superior para cambiar entre Torso-Pierna y PPL
+2. La rutina seleccionada se mostrará automáticamente
 
-Las contribuciones son bienvenidas. Si tienes ideas para mejorar o encuentras algún error, por favor abre un issue o envía un pull request.
+### Navegación entre Días
+- **Botón izquierdo (←)**: Día anterior
+- **Botón derecho (→)**: Día siguiente
+- **Botón de reinicio**: Reinicia el progreso del día actual
 
-## Próximos Pasos Potenciales (Ideas)
+### Gestión de Ejercicios
+1. Marca los ejercicios a medida que los completas
+2. El progreso se guarda automáticamente
+3. Al completar todos los ejercicios del día, recibirás una felicitación
 
-*   Permitir rutinas personalizables.
-*   Añadir seguimiento del historial de entrenamiento.
-*   Implementar sincronización en la nube.
-*   Mejorar las opciones de personalización del temporizador.
+### Temporizador de Descanso
+- El temporizador muestra el tiempo de descanso recomendado
+- Puedes usarlo para controlar tus períodos de descanso entre series
+
+## Personalización
+
+### Agregar Nuevos Ejercicios
+Para agregar nuevos ejercicios a las rutinas, modifica el archivo `script.js` en la sección de definición de rutinas.
+
+### Cambiar Duración del Descanso
+Edita el valor del temporizador en el archivo `script.js` para ajustar la duración del descanso predeterminado.
+
+### Modificar Colores
+Los colores principales se pueden cambiar modificando las clases de Tailwind CSS en los archivos HTML y CSS.
+
+## Características Técnicas
+
+- **Diseño Responsive**: Se adapta a pantallas desde 320px hasta escritorio
+- **Sin Dependencias Pesadas**: Solo utiliza Tailwind CSS via CDN
+- **Almacenamiento Local**: Guarda el progreso en el navegador
+- **Accesibilidad**: Etiquetas semánticas y navegación por teclado
+- **Rendimiento**: Optimizado para carga rápida en dispositivos móviles
+
+## Compatibilidad
+
+### Navegadores Soportados
+- Chrome (versión 60+)
+- Firefox (versión 60+)
+- Safari (versión 12+)
+- Edge (versión 79+)
+
+### Dispositivos
+- Smartphones Android e iOS
+- Tablets
+- Computadoras de escritorio y laptops
+
+## Contribuciones
+
+Este es un proyecto personal, pero las sugerencias y mejoras son bienvenidas. Si deseas contribuir:
+
+1. Haz un fork del proyecto
+2. Crea una rama para tu característica (`git checkout -b caracteristica-nueva`)
+3. Commit tus cambios (`git commit -am 'Agrega nueva característica'`)
+4. Push a la rama (`git push origin caracteristica-nueva`)
+5. Abre un Pull Request
+
+## Licencia
+
+Este proyecto es de código abierto y está disponible bajo la Licencia MIT. Puedes usarlo, modificarlo y distribuirlo libremente.
 
 ---
 
-Este README proporciona una visión general de la aplicación FitTrack, su estructura y cómo usarla.
+**Nota**: Esta aplicación fue creada como una herramienta personal para el seguimiento de rutinas de ejercicio. Siempre consulta con un profesional antes de iniciar cualquier programa de ejercicio.
