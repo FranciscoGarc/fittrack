@@ -26,50 +26,50 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: "Press de Banca con Barra", 
                 sets: 4, 
                 reps: 6, 
-                rest: 120}, {
+                rest: 110}, {
                 name: "Remo con Barra",
                 sets: 4,
                 reps: 6,
-                rest: 120
-            }, {name: "Press Militar con Barra", sets: 4, reps: 6, rest: 120}, {
+                rest: 110
+            }, {name: "Press Militar con Barra", sets: 4, reps: 6, rest: 110}, {
                 name: "Jalón al Pecho en Máquina",
                 sets: 4,
                 reps: 6,
-                rest: 90
+                rest: 80
             }, {
                 name: "Press de Pecho en Máquina",
                 sets: 3,
                 reps: 8,
-                rest: 90
+                rest: 80
             }, {
                 name: "Extensiones de Tríceps en Polea Alta",
                 sets: 3,
                 reps: 8,
-                rest: 60
-            }, {name: "Curl de Bíceps con Barra Z", sets: 3, reps: 8, rest: 60}]
+                rest: 50
+            }, {name: "Curl de Bíceps con Barra Z", sets: 3, reps: 8, rest: 50}]
         }, {
             day: "Día 2: Pierna - Fuerza",
             exercises: [{
                 name: "Sentadilla con Barra",
                 sets: 4,
                 reps: 6,
-                rest: 120
-            }, {name: "Peso Muerto Rumano con Barra", sets: 4, reps: 6, rest: 120}, {
+                rest: 110
+            }, {name: "Peso Muerto Rumano con Barra", sets: 4, reps: 6, rest: 110}, {
                 name: "Zancadas con Mancuernas",
                 sets: 4,
                 reps: 12,
-                rest: 90
+                rest: 80
             }, {
                 name: "Extensiones de Cuádriceps en Máquina",
                 sets: 4,
                 reps: 6,
-                rest: 90
+                rest: 80
             }, {
                 name: "Curl de Isquiotibiales con Mancuerna",
                 sets: 4,
                 reps: 8,
-                rest: 90
-            }, {name: "Elevación de Gemelos de Pie", sets: 4, reps: 10, rest: 60}]
+                rest: 80
+            }, {name: "Elevación de Gemelos de Pie", sets: 4, reps: 10, rest: 50}]
         }, {
             day: "Día 3: Descanso Activo", exercises: []
         }, {
@@ -78,46 +78,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: "Press Inclinado con Barra",
                 sets: 4,
                 reps: 6,
-                rest: 90
-            }, {name: "Remo con Mancuernas a una Mano", sets: 4, reps: 6, rest: 90}, {
+                rest: 80
+            }, {name: "Remo con Mancuernas a una Mano", sets: 4, reps: 6, rest: 80}, {
                 name: "Aperturas en Máquina",
                 sets: 4,
                 reps: 8,
-                rest: 60
+                rest: 50
             }, {
                 name: "Elevaciones Laterales con Mancuernas",
                 sets: 4,
                 reps: 7,
-                rest: 60
-            }, {name: "Jalón al Pecho en Máquina", sets: 4, reps: 6, rest: 90}, {
+                rest: 50
+            }, {name: "Jalón al Pecho en Máquina", sets: 4, reps: 6, rest: 80}, {
                 name: "Press Francés con Barra Z",
                 sets: 3,
                 reps: 8,
-                rest: 60
-            }, {name: "Curl de Bíceps con Mancuernas", sets: 3, reps: 8, rest: 60}]
+                rest: 50
+            }, {name: "Curl de Bíceps con Mancuernas", sets: 3, reps: 8, rest: 50}]
         }, {
             day: "Día 5: Pierna - Hipertrofia",
             exercises: [{
                 name: "Sentadilla Búlgara con Mancuernas",
                 sets: 4,
                 reps: 6,
-                rest: 90
+                rest: 80
             }, {
                 name: "Peso Muerto Rumano con Mancuernas",
                 sets: 4,
                 reps: 6,
-                rest: 90
+                rest: 80
             }, {
                 name: "Extensiones de Cuádriceps en Máquina",
                 sets: 4,
                 reps: 6,
-                rest: 60
+                rest: 50
             }, {
                 name: "Curl de Isquiotibiales con Mancuerna",
                 sets: 4,
                 reps: 8,
-                rest: 60
-            }, {name: "Elevación de Gemelos Sentado", sets: 4, reps: 8, rest: 60}]
+                rest: 50
+            }, {name: "Elevación de Gemelos Sentado", sets: 4, reps: 8, rest: 50}]
         }, {
             day: "Días 6 y 7: Descanso", exercises: []
         }], 'ppl': [{
@@ -126,45 +126,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: "Press de Banca con Barra",
                 sets: 4,
                 reps: 6,
-                rest: 120
-            }, {name: "Press Inclinado con Barra", sets: 4, reps: 6, rest: 120}, {
+                rest: 110
+            }, {name: "Press Inclinado con Barra", sets: 4, reps: 6, rest: 110}, {
                 name: "Press Militar con Mancuernas",
                 sets: 4,
                 reps: 6,
-                rest: 90
+                rest: 80
             }, {
                 name: "Aperturas en Máquina",
                 sets: 4,
                 reps: 8,
-                rest: 60
+                rest: 50
             }, {
                 name: "Elevaciones Laterales con Mancuernas",
                 sets: 4,
                 reps: 7,
-                rest: 60
-            }, {name: "Extensiones de Tríceps en Polea Alta", sets: 3, reps: 8, rest: 60}]
+                rest: 50
+            }, {name: "Extensiones de Tríceps en Polea Alta", sets: 3, reps: 8, rest: 50}]
         }, {
             day: "Día 2: Jalón (Espalda, Bíceps)",
             exercises: [{
                 name: "Remo con Barra",
                 sets: 4,
                 reps: 6,
-                rest: 120
+                rest: 110
             }, {
                 name: "Jalón al Pecho en Máquina",
                 sets: 4,
                 reps: 6,
-                rest: 90
-            }, {name: "Remo con Mancuernas a una Mano", sets: 4, reps: 6, rest: 90}, {
+                rest: 80
+            }, {name: "Remo con Mancuernas a una Mano", sets: 4, reps: 6, rest: 80}, {
                 name: "Face Pulls",
                 sets: 4,
                 reps: 8,
-                rest: 60
-            }, {name: "Curl de Bíceps con Barra Z", sets: 3, reps: 8, rest: 60}, {
+                rest: 50
+            }, {name: "Curl de Bíceps con Barra Z", sets: 3, reps: 8, rest: 50}, {
                 name: "Curl Martillo con Mancuernas",
                 sets: 3,
                 reps: 10,
-                rest: 60
+                rest: 50
             }]
         }, {
             day: "Día 3: Piernas",
@@ -172,69 +172,69 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: "Sentadilla con Barra",
                 sets: 4,
                 reps: 6,
-                rest: 120
-            }, {name: "Peso Muerto Rumano con Barra", sets: 4, reps: 6, rest: 120}, {
+                rest: 110
+            }, {name: "Peso Muerto Rumano con Barra", sets: 4, reps: 6, rest: 110}, {
                 name: "Zancadas con Mancuernas",
                 sets: 4,
                 reps: 12,
-                rest: 90
+                rest: 80
             }, {
                 name: "Extensiones de Cuádriceps en Máquina",
                 sets: 4,
                 reps: 6,
-                rest: 90
+                rest: 80
             }, {
                 name: "Curl de Isquiotibiales con Mancuerna",
                 sets: 4,
                 reps: 8,
-                rest: 90
-            }, {name: "Elevación de Gemelos de Pie", sets: 4, reps: 10, rest: 60}]
+                rest: 80
+            }, {name: "Elevación de Gemelos de Pie", sets: 4, reps: 10, rest: 50}]
         }, {
             day: "Día 4: Empuje (Segunda Sesión)",
             exercises: [{
                 name: "Press Plano con Barra",
                 sets: 4,
                 reps: 6,
-                rest: 120
-            }, {name: "Press de Pecho en Máquina", sets: 3, reps: 8, rest: 90}, {
+                rest: 110
+            }, {name: "Press de Pecho en Máquina", sets: 3, reps: 8, rest: 80}, {
                 name: "Press de Hombros con Barra",
                 sets: 4,
                 reps: 6,
-                rest: 90
+                rest: 80
             }, {
                 name: "Aperturas Inclinadas con Mancuernas",
                 sets: 4,
                 reps: 8,
-                rest: 60
+                rest: 50
             }, {
                 name: "Elevaciones Frontales con Mancuernas",
                 sets: 3,
                 reps: 8,
-                rest: 60
-            }, {name: "Press Francés con Barra Z", sets: 4, reps: 6, rest: 60}]
+                rest: 50
+            }, {name: "Press Francés con Barra Z", sets: 4, reps: 6, rest: 50}]
         }, {
             day: "Día 5: Jalón (Segunda Sesión)",
             exercises: [{
                 name: "Jalón al Pecho en Máquina",
                 sets: 4,
                 reps: 6,
-                rest: 90
-            }, {name: "Remo Inclinado con Mancuernas", sets: 4, reps: 6, rest: 90}, {
+                rest: 80
+            }, {name: "Remo Inclinado con Mancuernas", sets: 4, reps: 6, rest: 80}, {
                 name: "Pull-overs con Mancuerna",
                 sets: 3,
                 reps: 8,
-                rest: 60
+                rest: 50
             }, {
                 name: "Encogimientos de Hombros con Mancuernas",
                 sets: 4,
                 reps: 8,
-                rest: 60
+                rest: 50
             }, {
                 name: "Curl de Bíceps con Mancuernas",
                 sets: 3,
                 reps: 8,
-                rest: 60
-            }, {name: "Curl de Concentración con Mancuerna", sets: 3, reps: 8, rest: 60}]
+                rest: 50
+            }, {name: "Curl de Concentración con Mancuerna", sets: 3, reps: 8, rest: 50}]
         }, {
             day: "Días 6 y 7: Descanso", exercises: []
         }]
