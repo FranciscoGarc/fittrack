@@ -22,143 +22,147 @@ document.addEventListener('DOMContentLoaded', () => {
     const routines = {
         'torso-pierna': [{
             day: "Día 1: Torso - Fuerza",
-            exercises: [{name: "Press de Banca con Barra", sets: 3, reps: 6, rest: 120}, {
+            exercises: [{
+                name: "Press de Banca con Barra", 
+                sets: 4, 
+                reps: 6, 
+                rest: 120}, {
                 name: "Remo con Barra",
-                sets: 3,
+                sets: 4,
                 reps: 6,
                 rest: 120
-            }, {name: "Press Militar con Barra", sets: 3, reps: 6, rest: 120}, {
+            }, {name: "Press Militar con Barra", sets: 4, reps: 6, rest: 120}, {
                 name: "Jalón al Pecho en Máquina",
+                sets: 4,
+                reps: 6,
+                rest: 90
+            }, {
+                name: "Press de Pecho en Máquina",
                 sets: 3,
                 reps: 8,
                 rest: 90
             }, {
-                name: "Press de Pecho en Máquina",
-                sets: 2,
-                reps: 10,
-                rest: 90
-            }, {
                 name: "Extensiones de Tríceps en Polea Alta",
-                sets: 2,
-                reps: 10,
+                sets: 3,
+                reps: 8,
                 rest: 60
-            }, {name: "Curl de Bíceps con Barra Z", sets: 2, reps: 10, rest: 60}]
+            }, {name: "Curl de Bíceps con Barra Z", sets: 3, reps: 8, rest: 60}]
         }, {
             day: "Día 2: Pierna - Fuerza",
             exercises: [{
                 name: "Sentadilla con Barra",
-                sets: 3,
+                sets: 4,
                 reps: 6,
                 rest: 120
-            }, {name: "Peso Muerto Rumano con Barra", sets: 3, reps: 8, rest: 120}, {
+            }, {name: "Peso Muerto Rumano con Barra", sets: 4, reps: 6, rest: 120}, {
                 name: "Zancadas con Mancuernas",
-                sets: 3,
-                reps: 10,
+                sets: 4,
+                reps: 12,
                 rest: 90
             }, {
                 name: "Extensiones de Cuádriceps en Máquina",
-                sets: 3,
-                reps: 10,
+                sets: 4,
+                reps: 6,
                 rest: 90
             }, {
                 name: "Curl de Isquiotibiales con Mancuerna",
-                sets: 3,
-                reps: 12,
+                sets: 4,
+                reps: 8,
                 rest: 90
-            }, {name: "Elevación de Gemelos de Pie", sets: 3, reps: 15, rest: 60}]
+            }, {name: "Elevación de Gemelos de Pie", sets: 4, reps: 10, rest: 60}]
         }, {
             day: "Día 3: Descanso Activo", exercises: []
         }, {
             day: "Día 4: Torso - Hipertrofia",
             exercises: [{
                 name: "Press Inclinado con Barra",
-                sets: 3,
-                reps: 8,
+                sets: 4,
+                reps: 6,
                 rest: 90
-            }, {name: "Remo con Mancuernas a una Mano", sets: 3, reps: 8, rest: 90}, {
+            }, {name: "Remo con Mancuernas a una Mano", sets: 4, reps: 6, rest: 90}, {
                 name: "Aperturas en Máquina",
-                sets: 3,
-                reps: 12,
+                sets: 4,
+                reps: 8,
                 rest: 60
             }, {
                 name: "Elevaciones Laterales con Mancuernas",
-                sets: 3,
-                reps: 12,
+                sets: 4,
+                reps: 7,
                 rest: 60
-            }, {name: "Jalón al Pecho en Máquina", sets: 3, reps: 10, rest: 90}, {
+            }, {name: "Jalón al Pecho en Máquina", sets: 4, reps: 6, rest: 90}, {
                 name: "Press Francés con Barra Z",
-                sets: 2,
-                reps: 10,
+                sets: 3,
+                reps: 8,
                 rest: 60
-            }, {name: "Curl de Bíceps con Mancuernas", sets: 2, reps: 10, rest: 60}]
+            }, {name: "Curl de Bíceps con Mancuernas", sets: 3, reps: 8, rest: 60}]
         }, {
             day: "Día 5: Pierna - Hipertrofia",
             exercises: [{
                 name: "Sentadilla Búlgara con Mancuernas",
-                sets: 3,
-                reps: 10,
+                sets: 4,
+                reps: 6,
                 rest: 90
             }, {
                 name: "Peso Muerto Rumano con Mancuernas",
-                sets: 3,
-                reps: 10,
+                sets: 4,
+                reps: 6,
                 rest: 90
             }, {
                 name: "Extensiones de Cuádriceps en Máquina",
-                sets: 3,
-                reps: 12,
+                sets: 4,
+                reps: 6,
                 rest: 60
             }, {
                 name: "Curl de Isquiotibiales con Mancuerna",
-                sets: 3,
-                reps: 12,
+                sets: 4,
+                reps: 8,
                 rest: 60
-            }, {name: "Elevación de Gemelos Sentado", sets: 3, reps: 15, rest: 60}]
+            }, {name: "Elevación de Gemelos Sentado", sets: 4, reps: 8, rest: 60}]
         }, {
             day: "Días 6 y 7: Descanso", exercises: []
         }], 'ppl': [{
             day: "Día 1: Empuje (Pecho, Hombros, Tríceps)",
             exercises: [{
                 name: "Press de Banca con Barra",
-                sets: 3,
+                sets: 4,
                 reps: 6,
                 rest: 120
-            }, {name: "Press Inclinado con Barra", sets: 3, reps: 6, rest: 120}, {
+            }, {name: "Press Inclinado con Barra", sets: 4, reps: 6, rest: 120}, {
                 name: "Press Militar con Mancuernas",
-                sets: 3,
-                reps: 8,
+                sets: 4,
+                reps: 6,
                 rest: 90
             }, {
                 name: "Aperturas en Máquina",
-                sets: 3,
-                reps: 12,
+                sets: 4,
+                reps: 8,
                 rest: 60
             }, {
                 name: "Elevaciones Laterales con Mancuernas",
-                sets: 3,
-                reps: 12,
+                sets: 4,
+                reps: 7,
                 rest: 60
-            }, {name: "Extensiones de Tríceps en Polea Alta", sets: 3, reps: 10, rest: 60}]
+            }, {name: "Extensiones de Tríceps en Polea Alta", sets: 3, reps: 8, rest: 60}]
         }, {
             day: "Día 2: Jalón (Espalda, Bíceps)",
             exercises: [{
                 name: "Remo con Barra",
-                sets: 3,
-                reps: 8,
+                sets: 4,
+                reps: 6,
                 rest: 120
             }, {
-                name: "Jalón al Pecho en Máquina (Agarre Ancho)",
-                sets: 3,
-                reps: 8,
+                name: "Jalón al Pecho en Máquina",
+                sets: 4,
+                reps: 6,
                 rest: 90
-            }, {name: "Remo con Mancuernas a una Mano", sets: 3, reps: 12, rest: 90}, {
+            }, {name: "Remo con Mancuernas a una Mano", sets: 4, reps: 6, rest: 90}, {
                 name: "Face Pulls",
-                sets: 3,
-                reps: 12,
+                sets: 4,
+                reps: 8,
                 rest: 60
-            }, {name: "Curl de Bíceps con Barra Z", sets: 3, reps: 10, rest: 60}, {
+            }, {name: "Curl de Bíceps con Barra Z", sets: 3, reps: 8, rest: 60}, {
                 name: "Curl Martillo con Mancuernas",
-                sets: 2,
+                sets: 3,
                 reps: 10,
                 rest: 60
             }]
@@ -166,71 +170,71 @@ document.addEventListener('DOMContentLoaded', () => {
             day: "Día 3: Piernas",
             exercises: [{
                 name: "Sentadilla con Barra",
-                sets: 3,
-                reps: 8,
+                sets: 4,
+                reps: 6,
                 rest: 120
-            }, {name: "Peso Muerto Rumano con Barra", sets: 3, reps: 8, rest: 120}, {
+            }, {name: "Peso Muerto Rumano con Barra", sets: 4, reps: 6, rest: 120}, {
                 name: "Zancadas con Mancuernas",
-                sets: 3,
-                reps: 10,
+                sets: 4,
+                reps: 12,
                 rest: 90
             }, {
                 name: "Extensiones de Cuádriceps en Máquina",
-                sets: 3,
-                reps: 12,
+                sets: 4,
+                reps: 6,
                 rest: 90
             }, {
                 name: "Curl de Isquiotibiales con Mancuerna",
-                sets: 3,
-                reps: 12,
+                sets: 4,
+                reps: 8,
                 rest: 90
-            }, {name: "Elevación de Gemelos de Pie", sets: 3, reps: 15, rest: 60}]
+            }, {name: "Elevación de Gemelos de Pie", sets: 4, reps: 10, rest: 60}]
         }, {
             day: "Día 4: Empuje (Segunda Sesión)",
             exercises: [{
                 name: "Press Plano con Barra",
-                sets: 3,
-                reps: 8,
+                sets: 4,
+                reps: 6,
                 rest: 120
-            }, {name: "Press de Pecho en Máquina", sets: 3, reps: 10, rest: 90}, {
+            }, {name: "Press de Pecho en Máquina", sets: 3, reps: 8, rest: 90}, {
                 name: "Press de Hombros con Barra",
-                sets: 3,
-                reps: 8,
+                sets: 4,
+                reps: 6,
                 rest: 90
             }, {
                 name: "Aperturas Inclinadas con Mancuernas",
-                sets: 3,
-                reps: 12,
+                sets: 4,
+                reps: 8,
                 rest: 60
             }, {
                 name: "Elevaciones Frontales con Mancuernas",
-                sets: 2,
-                reps: 12,
+                sets: 3,
+                reps: 8,
                 rest: 60
-            }, {name: "Press Francés con Barra Z", sets: 3, reps: 10, rest: 60}]
+            }, {name: "Press Francés con Barra Z", sets: 4, reps: 6, rest: 60}]
         }, {
             day: "Día 5: Jalón (Segunda Sesión)",
             exercises: [{
                 name: "Jalón al Pecho en Máquina",
+                sets: 4,
+                reps: 6,
+                rest: 90
+            }, {name: "Remo Inclinado con Mancuernas", sets: 4, reps: 6, rest: 90}, {
+                name: "Pull-overs con Mancuerna",
                 sets: 3,
                 reps: 8,
-                rest: 90
-            }, {name: "Remo Inclinado con Mancuernas", sets: 3, reps: 8, rest: 90}, {
-                name: "Pull-overs con Mancuerna",
-                sets: 2,
-                reps: 12,
                 rest: 60
             }, {
                 name: "Encogimientos de Hombros con Mancuernas",
-                sets: 3,
-                reps: 12,
+                sets: 4,
+                reps: 8,
                 rest: 60
             }, {
                 name: "Curl de Bíceps con Mancuernas",
                 sets: 3,
-                reps: 10,
+                reps: 8,
                 rest: 60
-            }, {name: "Curl de Concentración con Mancuerna", sets: 2, reps: 10, rest: 60}]
+            }, {name: "Curl de Concentración con Mancuerna", sets: 3, reps: 8, rest: 60}]
         }, {
             day: "Días 6 y 7: Descanso", exercises: []
         }]
@@ -242,9 +246,22 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!workoutState[routineName]) {
                 workoutState[routineName] = routines[routineName].map(day => ({
                     ...day, exercises: day.exercises.map(exercise => ({
-                        ...exercise, completed: new Array(exercise.sets).fill(false)
+                        ...exercise, 
+                        completed: new Array(exercise.sets).fill(false),
+                        currentReps: exercise.reps, // Reps actuales (pueden aumentar)
+                        baseReps: exercise.reps // Reps base originales
                     }))
                 }));
+            } else {
+                // Actualizar ejercicios existentes con nuevas propiedades si no las tienen
+                workoutState[routineName].forEach((day, dayIndex) => {
+                    day.exercises.forEach((exercise, exerciseIndex) => {
+                        if (exercise.currentReps === undefined) {
+                            exercise.currentReps = exercise.reps || routines[routineName][dayIndex].exercises[exerciseIndex].reps;
+                            exercise.baseReps = routines[routineName][dayIndex].exercises[exerciseIndex].reps;
+                        }
+                    });
+                });
             }
         });
     };
@@ -327,6 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const routine = workoutState[currentRoutine][currentDayIndex];
         routineTitle.textContent = routine.day;
         resetDayBtn.style.display = routine.exercises.length > 0 ? 'block' : 'none';
+        document.getElementById('resetProgressBtn').style.display = routine.exercises.length > 0 ? 'block' : 'none';
 
         let html = '<div class="space-y-6">';
         if (routine.exercises.length === 0) {
@@ -342,7 +360,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4 gap-2">
                             <h3 class="text-lg font-semibold text-white">${exercise.name}</h3>
                             <div class="flex flex-col sm:flex-row gap-2">
-                                <p class="text-sm font-medium text-gray-300 bg-gray-700 px-3 py-1 rounded-full self-start">${exercise.sets} series × ${exercise.reps} reps</p>
+                                <p class="text-sm font-medium text-gray-300 bg-gray-700 px-3 py-1 rounded-full self-start">${exercise.sets} series × ${exercise.currentReps} reps</p>
+                                ${exercise.currentReps > exercise.baseReps ? 
+                                    `<p class="text-sm font-medium text-blue-400 bg-blue-900/30 px-3 py-1 rounded-full self-start">+${exercise.currentReps - exercise.baseReps} reps</p>` : 
+                                    ''
+                                }
                                 <p class="text-sm font-medium text-emerald-400 bg-emerald-900/30 px-3 py-1 rounded-full self-start">${exercise.rest}s descanso</p>
                             </div>
                         </div>
@@ -374,7 +396,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const setIndex = parseInt(e.target.dataset.set);
             const restTime = parseInt(e.target.dataset.rest);
 
+            // Marcar la serie como completada
             workoutState[currentRoutine][currentDayIndex].exercises[exerciseIndex].completed[setIndex] = true;
+
+            // Verificar si el ejercicio completo está terminado (todas las series)
+            if (isExerciseCompleted(exerciseIndex)) {
+                incrementExerciseReps(exerciseIndex);
+            }
 
             saveState();
             startTimer(restTime);
@@ -384,9 +412,36 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const resetCurrentDay = () => {
-        if (confirm('¿Estás seguro de que quieres reiniciar el progreso de hoy?')) {
+        if (confirm('¿Estás seguro de que quieres reiniciar el progreso de hoy? (Las repeticiones aumentadas se mantendrán)')) {
             const routine = workoutState[currentRoutine][currentDayIndex];
             routine.exercises.forEach(exercise => {
+                exercise.completed = new Array(exercise.sets).fill(false);
+                // No reseteamos currentReps para mantener el progreso
+            });
+            saveState();
+            renderCurrentDay();
+        }
+    };
+
+    // Función para incrementar reps cuando se completa un ejercicio
+    const incrementExerciseReps = (exerciseIndex) => {
+        const exercise = workoutState[currentRoutine][currentDayIndex].exercises[exerciseIndex];
+        exercise.currentReps += 1;
+        console.log(`${exercise.name}: Reps aumentadas a ${exercise.currentReps}`);
+    };
+
+    // Función para verificar si un ejercicio está completamente terminado
+    const isExerciseCompleted = (exerciseIndex) => {
+        const exercise = workoutState[currentRoutine][currentDayIndex].exercises[exerciseIndex];
+        return exercise.completed.every(set => set);
+    };
+
+    // Función para resetear el progreso de repeticiones
+    const resetProgressiveOverload = () => {
+        if (confirm('¿Estás seguro de que quieres reiniciar todas las repeticiones a sus valores originales? Esta acción no se puede deshacer.')) {
+            const routine = workoutState[currentRoutine][currentDayIndex];
+            routine.exercises.forEach(exercise => {
+                exercise.currentReps = exercise.baseReps;
                 exercise.completed = new Array(exercise.sets).fill(false);
             });
             saveState();
@@ -460,6 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
     prevDayBtn.addEventListener('click', () => navigateDays(-1));
     nextDayBtn.addEventListener('click', () => navigateDays(1));
     resetDayBtn.addEventListener('click', resetCurrentDay);
+    document.getElementById('resetProgressBtn').addEventListener('click', resetProgressiveOverload);
     routineSwitch.addEventListener('change', switchRoutine);
     closeModalBtn.addEventListener('click', () => {
         congratsModal.classList.add('hidden');
